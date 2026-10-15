@@ -49,9 +49,9 @@ The testing approach follows the requirements of the specification, including te
 | File | Who | How |
 |---|---|---|
 | `LinkedChain.java` | CS 2114 staff (provided) | Used unchanged |
-| `GroceryItem.java` | TBD | Implemented, revised and reviewed |
-| `ShoppingList.java` | TBD | Implemented, revised and reviewed |
+| `GroceryItem.java` | Wayne Clue | Implemented, revised and reviewed |
+| `ShoppingList.java` | Randy Park | Implemented, revised and reviewed |
 | `BasketBuddy.java` | Varooni Sawant | Implemented, revised and reviewed |
-| `GroceryItemTest.java` | TBD | Implemented, revised and reviewed |
-| `ShoppingListTest.java` | TBD | Implemented, revised and reviewed |
+| `GroceryItemTest.java` | Wayne Clue | Implemented, revised and reviewed |
+| `ShoppingListTest.java` | Randy Park | Implemented, revised and reviewed |
 | `README.md` | Varooni | revised and reviewed|
