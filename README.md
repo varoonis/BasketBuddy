@@ -37,12 +37,24 @@ The application classes interact with LinkedChain through its public API. Applic
 
 ## Reflection
 
-The implementation follows the original project specification. No changes were made to the planned class design, method signatures, or input validation requirements.
+BasketBuddy is organized into three main classes: GroceryItem, ShoppingList, and BasketBuddy. Each class has its own responsibility. GroceryItem represents a grocery item, ShoppingList manages the items in a list, and BasketBuddy manages the shopping lists.
 
-The application uses the provided LinkedChain implementation through its public API and reuses the generic data structure to store both grocery items and shopping lists. Application logic remains within the appropriate application classes.
+We use the provided LinkedChain class to store both grocery items and shopping lists. This lets us reuse the same generic data structure instead of creating separate data structures for each type. The application classes use the public methods of LinkedChain to add, remove, and access items.
 
-The testing approach follows the requirements of the specification, including testing normal cases and invalid-input cases.
+Our goal was to follow the project specification while keeping the code organized and easy to understand. The provided LinkedChain.java file was used without changes except the package prj2; was added. We did not run into any major challenges while working on the project. We focused on following the project specifications, keeping each class organized, and using the provided LinkedChain implementation for both grocery items and shopping lists. This helped us understand how a generic data structure can be reused for different types of objects.
 
+We still need to make sure the application handles invalid input correctly and that all the required JUnit tests pass. We will also check for any unfinished features or issues before submitting the project.
+
+## Next Steps
+After completing BasketBuddy, we can look at ways to improve the application and make it more useful. Some possible improvements include:
+
+- Add sorting: Allow users to sort grocery items alphabetically to make shopping lists easier to navigate.
+- Add budget tracking: Let users set a budget for each shopping list and keep track of estimated grocery costs.
+- Add store-specific lists: Allow users to organize grocery items by store so they can plan their shopping trips more efficiently.
+- Improve the user interface: Make the menu easier to navigate and provide clearer messages when users add, remove, or view items.
+- Expand testing: Add more tests to cover edge cases and make sure future changes do not break existing functionality.
+
+These improvements could make BasketBuddy more convenient to use while building on the functionality completed for this project.
 
 ## Attribution
 
