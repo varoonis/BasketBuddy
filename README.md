@@ -64,6 +64,7 @@ These improvements could make BasketBuddy more convenient to use while building 
 | `GroceryItem.java` | Wayne Clue | Implemented, revised and reviewed |
 | `ShoppingList.java` | Randy Park | Implemented, revised and reviewed |
 | `BasketBuddy.java` | Varooni Sawant | Implemented, revised and reviewed |
+| `BasketBuddyGUI.java` | Varooni Sawant | Implemented, revised and reviewed |
 | `GroceryItemTest.java` | Wayne Clue | Implemented, revised and reviewed |
 | `ShoppingListTest.java` | Randy Park | Implemented, revised and reviewed |
 | `README.md` | Varooni | revised and reviewed|
