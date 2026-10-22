@@ -2,8 +2,8 @@
 package prj2;
 
 /**
- * Represents a grocery shopping list in BasketBuddy.
- * Stores grocery items using a LinkedChain.
+ * Represents a grocery shopping list in BasketBuddy. Stores grocery items using
+ * a LinkedChain.
  *
  * @author Randy
  * @version Oct 15, 2026
@@ -16,8 +16,10 @@ public class ShoppingList
     /**
      * Creates an empty shopping list with a name.
      *
-     * @param name the name of the shopping list
-     * @throws IllegalArgumentException if name is null or blank
+     * @param name
+     *            the name of the shopping list
+     * @throws IllegalArgumentException
+     *             if name is null or blank
      */
     public ShoppingList(String name)
     {
@@ -31,6 +33,7 @@ public class ShoppingList
         items = new LinkedChain<>();
     }
 
+
     /**
      * Returns the name of the shopping list.
      *
@@ -41,27 +44,31 @@ public class ShoppingList
         return name;
     }
 
+
     /**
      * Adds a grocery item to the end of the list.
      *
-     * @param item the grocery item to add
-     * @throws IllegalArgumentException if item is null
+     * @param item
+     *            the grocery item to add
+     * @throws IllegalArgumentException
+     *             if item is null
      */
     public void addItem(GroceryItem item)
     {
         if (item == null)
         {
-            throw new IllegalArgumentException(
-                "Item cannot be null");
+            throw new IllegalArgumentException("Item cannot be null");
         }
 
         items.addToEnd(item);
     }
 
+
     /**
      * Removes the first item with a matching name.
      *
-     * @param item the grocery item to remove
+     * @param item
+     *            the grocery item to remove
      * @return true if an item was removed, false otherwise
      */
     public boolean removeItem(GroceryItem item)
@@ -84,17 +91,21 @@ public class ShoppingList
         return false;
     }
 
+
     /**
      * Gets an item at a specified position.
      *
-     * @param position the zero-based index
+     * @param position
+     *            the zero-based index
      * @return the grocery item at that position
-     * @throws IndexOutOfBoundsException if position is invalid
+     * @throws IndexOutOfBoundsException
+     *             if position is invalid
      */
     public GroceryItem getItem(int position)
     {
         return items.get(position);
     }
+
 
     /**
      * Returns the number of items in the list.
@@ -106,6 +117,7 @@ public class ShoppingList
         return items.size();
     }
 
+
     /**
      * Checks whether the shopping list is empty.
      *
@@ -116,6 +128,7 @@ public class ShoppingList
         return items.isEmpty();
     }
 
+
     /**
      * Returns a string representation of the shopping list.
      *
@@ -125,5 +138,23 @@ public class ShoppingList
     public String toString()
     {
         return name + ": " + items.toString();
+    }
+
+
+    /**
+     * Sorts the items alphabetically by name, ignoring case. Items with equal
+     * names keep their relative order.
+     */
+    public void sortItems()
+    {
+        GroceryItem[] sorted = items.toArray(new GroceryItem[items.size()]);
+        java.util.Arrays.sort(
+            sorted,
+            (a, b) -> a.getName().compareToIgnoreCase(b.getName()));
+        items.clear();
+        for (GroceryItem item : sorted)
+        {
+            items.addToEnd(item);
+        }
     }
 }

@@ -238,4 +238,57 @@ public class ShoppingListTest extends TestCase
         assertEquals("Weekly Groceries: [Milk]",
             list.toString());
     }
+    
+    /**
+     * Tests sorting a mixed-case list alphabetically.
+     */
+    public void testSortItems()
+    {
+        ShoppingList list = new ShoppingList("Test");
+        list.addItem(new GroceryItem("milk"));
+        list.addItem(new GroceryItem("Apples"));
+        list.addItem(new GroceryItem("Bread"));
+
+        list.sortItems();
+
+        assertEquals("Apples", list.getItem(0).getName());
+        assertEquals("Bread", list.getItem(1).getName());
+        assertEquals("milk", list.getItem(2).getName());
+        assertEquals(3, list.getItemCount());
+    }
+
+    /**
+     * Tests sorting an empty list and a one-item list.
+     */
+    public void testSortEmptyAndSingle()
+    {
+        ShoppingList list = new ShoppingList("Test");
+        list.sortItems();
+        assertTrue(list.isEmpty());
+
+        list.addItem(new GroceryItem("Eggs"));
+        list.sortItems();
+        assertEquals(1, list.getItemCount());
+        assertEquals("Eggs", list.getItem(0).getName());
+    }
+
+    /**
+     * Tests sorting an already sorted list and one with equal names.
+     */
+    public void testSortAlreadySortedAndDuplicates()
+    {
+        ShoppingList list = new ShoppingList("Test");
+        list.addItem(new GroceryItem("Apples"));
+        list.addItem(new GroceryItem("Bread"));
+        list.sortItems();
+        assertEquals("Apples", list.getItem(0).getName());
+        assertEquals("Bread", list.getItem(1).getName());
+
+        list.addItem(new GroceryItem("apples"));
+        list.sortItems();
+        assertEquals(3, list.getItemCount());
+        assertEquals("Apples", list.getItem(0).getName());  // stable order
+        assertEquals("apples", list.getItem(1).getName());
+        assertEquals("Bread", list.getItem(2).getName());
+    }
 }
